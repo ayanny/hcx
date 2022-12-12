@@ -39,11 +39,10 @@ class HCX:
     """
 
     def __init__(self, url, auth_token):
-        # self.username = username
-        # self.password = password
+
         self.url = f"https://{url}"
         self.api_url = f"https://{url}/hybridity/api"
-        # self.auth_token = authenticate(self.url, self.username, self.password)
+        
         self.auth_token = auth_token
         self.headers = {
             "Accept": "application/json",
