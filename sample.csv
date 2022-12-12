@@ -1,0 +1,2 @@
+vmName,sourceEndpoint,destinationEndpoint,destinationDataStore,diskProvisionType,destinationResourcePool,destinationFolder,destinationNetwork,destinationDatacenter,storageProfileName,migrationProfile
+demo-vm,Non vSphere Inventory,vcenter.localhost.com,ds09,thin,Production-Demo,Production-Folder,demo-networks,Demo-Datacenter,Demo Default Policy,OSAssistedMigration

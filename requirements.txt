@@ -1,0 +1,6 @@
+setuptools~=62.0.0
+schema~=0.7.5
+requests~=2.27.1
+rich~=12.6.0
+typer~=0.7.0
+python-dotenv~=0.21.0
