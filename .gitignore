@@ -3,9 +3,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+client.py
+vms.csv
 # C extensions
 *.so
-
+*.idea
+.idea/
 # Distribution / packaging
 .Python
 build/
