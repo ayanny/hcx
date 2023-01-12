@@ -13,7 +13,7 @@ pip install -r requirements.txt
 3. create .env file within the root of the repo or export the following environment variables to provide authentication and authorization to the HCX manager. Note HCX_URL can be either DNS or IP
 ```bash
 export USERNAME="username"
-export PASSWORD="passowrd"
+export PASSWORD="password"
 export HCX_URL="hcx dns or ip"
 ```
 4. Create CSV file to include all the Virtual Machines you desire to migrate. You can find example in sample.csv

@@ -249,42 +249,33 @@ def configure_migration_item(vm: dict, endpoints: list, vms: list,
                              storage_profiles: list,
                              containers: list,
                              networks: list):
-    # get source endpoint
+   
     source_endpoint = get_endpoint(data=endpoints, is_local_endpoint=True, resource_name=vm["sourceEndpoint"])
 
-    # get destination endpoint
     destination_endpoint = get_endpoint(data=endpoints, is_local_endpoint=False,
                                         resource_name=vm["destinationEndpoint"])
     destination_endpoint_id = destination_endpoint["endpointId"]
 
-    # get details of a given vm
     vm_info = get_vm_info(vms, vm_name=vm["vmName"])
 
-    # get network info for a given vm
     vm_network_info = get_vm_network_info(data=vms, vm_name=vm["vmName"])
 
-    # get datastore info
     data_store_info = get_data_store_info(data=data_stores, data_store_name=vm["destinationDataStore"],
                                           disk_provision_type=vm["diskProvisionType"])
 
-    # get storage profile details
     storage_profile_info = get_storage_profile_info(data=storage_profiles,
                                                     storage_profile_name=vm["storageProfileName"])
 
-    # configure vm placement
     vm_placement_info = configure_vm_placement(data=containers, datacenter_name=vm["destinationDatacenter"],
                                                folder_name=vm["destinationFolder"],
                                                resource_pool_name=vm["destinationResourcePool"],
                                                endpoint_id=destination_endpoint_id
                                                )
-    # get destination network info
     destination_network_info = get_destination_network_info(data=networks, network_name=vm["destinationNetwork"])
 
-    # configure network mappings for the vm
     network_mappings = configure_network_mapping(source_network=vm_network_info,
                                                  destination_network=destination_network_info)
 
-    # generate
     migration_payload = generate_migration_payload(source_endpoint=source_endpoint,
                                                    destination_endpoint=destination_endpoint,
                                                    networks=network_mappings,
