@@ -53,7 +53,7 @@ def virtual_machine(filename: str):
     storage_profiles = hcx.get_hcx_storage_profiles()
     networks = hcx.get_hcx_networks()
     containers = hcx.get_hcx_containers()
-
+    print(vms)
     console.print("Found configurations for datacenter, storage, compute, folder, resources, networks",
                   style="bold green")
 
@@ -81,7 +81,7 @@ def virtual_machine(filename: str):
         else:
             console.print(f"Errors found for  {vm['vmName']},{validation}", style="bold red")
             bad_migration_items.append({"vmName": vm["vmName"], "errors": validation})
-
+    console.print_json(data=migration_items)
     if migration_items:
         console.print(f"Initiating the migration", style="bold green")
         migration = hcx.migrate(migration_objects=migration_items, action="start")
