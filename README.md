@@ -1,4 +1,4 @@
-# HCX Migration Automation
+# HCX OSAM Migration
 
 This work attempts to migrate VirtualMachines using HCX Sentinel Agent. It's assumed that you have HCX Manager deployed in your Source Cloud Environment and the Destination Environment. Instances can be migrated using this work provided they are correctly configured with Sentinel Agent.
 
