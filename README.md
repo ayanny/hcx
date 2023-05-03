@@ -21,9 +21,9 @@ export HCX_URL="hcx dns or ip"
 5. To execute the migration script, run the command below within the root of this repo; 
 
 ```bash
-python migrate.py virtual-machine sample.csv
+python main.py migrate-vm -f sample.csv
 ```
 6. To check migration status, you will need migrationIds, these will be stored in migration_outputs/migration_ids.cvs file. 
 ```bash
-    python migrate.py check-migration-status <migrationid-1> <migrationid-2> <migrationid-3>
+    python main.py check-migration-status --id<migrationid-1> --id <migrationid-2> --id <migrationid-3>
 ```

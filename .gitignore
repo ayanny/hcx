@@ -24,6 +24,8 @@ sdist/
 var/
 wheels/
 pip-wheel-metadata/
+migration_outputs/
+vms1.csv
 share/python-wheels/
 *.egg-info/
 .installed.cfg
